@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport de Vulnérabilités — MediConnect Corp</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; color: #333; }
+  h1 { color: #c0392b; border-bottom: 3px solid #c0392b; padding-bottom: 10px; }
+  h2 { color: #2c3e50; margin-top: 40px; }
+  h3 { color: #34495e; }
+  .summary-box { background: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+  .risk-score { font-size: 48px; font-weight: bold; color: #e67e22; }
+  .vuln-card { background: white; border-left: 5px solid #ccc; padding: 15px; margin: 15px 0; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .CRITICAL { border-left-color: #e74c3c; }
+  .HIGH { border-left-color: #e67e22; }
+  .MEDIUM { border-left-color: #f39c12; }
+  .LOW { border-left-color: #27ae60; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; }
+  .badge-CRITICAL { background: #e74c3c; }
+  .badge-HIGH { background: #e67e22; }
+  .badge-MEDIUM { background: #f39c12; }
+  .badge-LOW { background: #27ae60; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
+  th { background: #2c3e50; color: white; padding: 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f9f9f9; }
+  .scenario-card { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .step { background: #ecf0f1; padding: 10px; margin: 8px 0; border-radius: 4px; border-left: 3px solid #3498db; }
+  .mitigation-card { background: white; padding: 15px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .IMMEDIATE { border-top: 3px solid #e74c3c; }
+  .SHORT_TERM { border-top: 3px solid #e67e22; }
+  .LONG_TERM { border-top: 3px solid #27ae60; }
+  ol { padding-left: 20px; }
+  li { margin: 5px 0; }
+</style>
+</head>
+<body>
+<h1>Rapport de Sécurité — MediConnect Corp</h1>
+
+<div class="summary-box">
+  <h2 style="color:white; margin-top:0;">Synthèse Exécutive</h2>
+  <div class="risk-score">72/100</div>
+  <p>Score de risque global</p>
+  <p>The MediConnect architecture presents multiple security vulnerabilities due to outdated software, insecure authentication methods, and insecure database configuration.</p>
+  <p><strong>Vulnérabilités détectées :</strong> 8 
+     (CRITICAL: 0, 
+      HIGH: 3,
+      MEDIUM: 3,
+      LOW: 2)</p>
+</div>
+
+<h2>Vulnérabilités Identifiées</h2>
+
+<div class="vuln-card HIGH">
+  <h3>VULN-001 — Nginx 
+    <span class="badge badge-HIGH">HIGH</span>
+    <span style="float:right; font-size:14px;">CVSS: 7.5</span>
+  </h3>
+  <p><strong>Type :</strong> Outdated Software</p>
+  <p><strong>Description :</strong> Nginx 1.18 is outdated and vulnerable to multiple security issues.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2021-23017</strong> (CVSS 7.7) — Off-by-one dans le resolver DNS de Nginx 1.18</li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card HIGH">
+  <h3>VULN-002 — PHP 
+    <span class="badge badge-HIGH">HIGH</span>
+    <span style="float:right; font-size:14px;">CVSS: 7.5</span>
+  </h3>
+  <p><strong>Type :</strong> Outdated Software</p>
+  <p><strong>Description :</strong> PHP 7.4 is outdated and vulnerable to multiple security issues.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2001-1471</strong> (CVSS 8.8) — prefs.php in phpBB 1.4.0 and earlier allows remote authenticated users to execute arbitrary PHP code via an invalid language value, which prevents the variables (1) $l_statsblock in prefs.php or (2) $</li>
+    
+    <li><strong>CVE-2002-1800</strong> (CVSS 7.5) — phpRank 1.8 stores the administrative password in plaintext on the server and in the "ap" cookie, which allows remote attackers to retrieve the administrative password.</li>
+    
+    <li><strong>CVE-2004-1842</strong> (CVSS 8.8) — Cross-site request forgery (CSRF) vulnerability in Php-Nuke 6.x through 7.1.0 allows remote attackers to gain administrative privileges via an img tag with a URL to admin.php.</li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card MEDIUM">
+  <h3>VULN-003 — Laravel 
+    <span class="badge badge-MEDIUM">MEDIUM</span>
+    <span style="float:right; font-size:14px;">CVSS: 6.5</span>
+  </h3>
+  <p><strong>Type :</strong> Outdated Software</p>
+  <p><strong>Description :</strong> Laravel 8.x is outdated and may be vulnerable to known security issues.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2017-14704</strong> (CVSS 0) — Multiple unrestricted file upload vulnerabilities in the (1) imageSubmit and (2) proof_submit functions in Claydip Laravel Airbnb Clone 1.0 allow remote authenticated users to execute arbitrary code b</li>
+    
+    <li><strong>CVE-2017-16894</strong> (CVSS 0) — In Laravel framework through 5.5.21, remote attackers can obtain sensitive information (such as externally usable passwords) via a direct request for the /.env URI. NOTE: this CVE is only about Larave</li>
+    
+    <li><strong>CVE-2018-8947</strong> (CVSS 0) — rap2hpoutre Laravel Log Viewer before v0.13.0 relies on Base64 encoding for l, dl, and del requests, which makes it easier for remote attackers to bypass intended access restrictions, as demonstrated </li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card HIGH">
+  <h3>VULN-004 — Ubuntu 
+    <span class="badge badge-HIGH">HIGH</span>
+    <span style="float:right; font-size:14px;">CVSS: 7.5</span>
+  </h3>
+  <p><strong>Type :</strong> Outdated Software</p>
+  <p><strong>Description :</strong> Ubuntu 20.04 is outdated and may be vulnerable to known security issues.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2016-2856</strong> (CVSS 0) — pt_chown in the glibc package before 2.19-18+deb8u4 on Debian jessie; the elibc package before 2.15-0ubuntu10.14 on Ubuntu 12.04 LTS and before 2.19-0ubuntu6.8 on Ubuntu 14.04 LTS; and the glibc packa</li>
+    
+    <li><strong>CVE-2016-1240</strong> (CVSS 0) — The Tomcat init script in the tomcat7 package before 7.0.56-3+deb8u4 and tomcat8 package before 8.0.14-1+deb8u3 on Debian jessie and the tomcat6 and libtomcat6-java packages before 6.0.35-1ubuntu3.8 o</li>
+    
+    <li><strong>CVE-2015-1328</strong> (CVSS 0) — The overlayfs implementation in the linux (aka Linux kernel) package before 3.19.0-21.21 in Ubuntu through 15.04 does not properly check permissions for file creation in the upper filesystem directory</li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card MEDIUM">
+  <h3>VULN-005 — API REST 
+    <span class="badge badge-MEDIUM">MEDIUM</span>
+    <span style="float:right; font-size:14px;">CVSS: 6.5</span>
+  </h3>
+  <p><strong>Type :</strong> Insecure Authentication</p>
+  <p><strong>Description :</strong> JWT HS256 is susceptible to brute force attacks.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2014-1529</strong> (CVSS 8.8) — The Web Notification API in Mozilla Firefox before 29.0, Firefox ESR 24.x before 24.5, Thunderbird before 24.5, and SeaMonkey before 2.26 allows remote attackers to bypass intended source-component re</li>
+    
+    <li><strong>CVE-2016-0943</strong> (CVSS 0) — Adobe Reader and Acrobat before 11.0.14, Acrobat and Acrobat Reader DC Classic before 15.006.30119, and Acrobat and Acrobat Reader DC Continuous before 15.010.20056 on Windows and OS X mishandle the G</li>
+    
+    <li><strong>CVE-2016-1290</strong> (CVSS 0) — The web API in Cisco Prime Infrastructure 1.2.0 through 2.2(2) and Cisco Evolved Programmable Network Manager (EPNM) 1.2 allows remote authenticated users to bypass intended RBAC restrictions and gain</li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card LOW">
+  <h3>VULN-006 — Interface d'administration 
+    <span class="badge badge-LOW">LOW</span>
+    <span style="float:right; font-size:14px;">CVSS: 3.5</span>
+  </h3>
+  <p><strong>Type :</strong> Insecure Authentication</p>
+  <p><strong>Description :</strong> Basic HTTP authentication is susceptible to brute force attacks.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+</div>
+
+<div class="vuln-card MEDIUM">
+  <h3>VULN-007 — Python Service 
+    <span class="badge badge-MEDIUM">MEDIUM</span>
+    <span style="float:right; font-size:14px;">CVSS: 6.5</span>
+  </h3>
+  <p><strong>Type :</strong> Insecure Serialization</p>
+  <p><strong>Description :</strong> Pickle serialization is susceptible to arbitrary code execution.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2015-7546</strong> (CVSS 7.5) — The identity service in OpenStack Identity (Keystone) before 2015.1.3 (Kilo) and 8.0.x before 8.0.2 (Liberty) and keystonemiddleware (formerly python-keystoneclient) before 1.5.4 (Kilo) and Liberty be</li>
+    
+    <li><strong>CVE-2016-6581</strong> (CVSS 0) — A HTTP/2 implementation built using any version of the Python HPACK library between v1.0.0 and v2.2.0 could be targeted for a denial of service attack, specifically a so-called "HPACK Bomb" attack. Th</li>
+    
+    <li><strong>CVE-2015-3220</strong> (CVSS 0) — The tlslite library before 0.4.9 for Python allows remote attackers to trigger a denial of service (runtime exception and process crash).</li>
+    
+  </ul>
+  
+</div>
+
+<div class="vuln-card LOW">
+  <h3>VULN-008 — MySQL 
+    <span class="badge badge-LOW">LOW</span>
+    <span style="float:right; font-size:14px;">CVSS: 3.5</span>
+  </h3>
+  <p><strong>Type :</strong> Insecure Database Configuration</p>
+  <p><strong>Description :</strong> Database user and password are weak and easily guessable.</p>
+  <p><strong>Vecteur d'attaque :</strong> Network</p>
+  
+  
+  <p><strong>CVE mappées :</strong></p>
+  <ul>
+    
+    <li><strong>CVE-2021-2154</strong> (CVSS 4.9) — Élévation de privilèges dans MySQL 5.7</li>
+    
+  </ul>
+  
+</div>
+
+
+<h2>Tableau de Mapping CVE</h2>
+<table>
+  <tr><th>Composant</th><th>CVE/CWE</th><th>CVSS</th><th>Sévérité</th><th>Description</th></tr>
+  
+  
+  <tr>
+    <td>Nginx</td>
+    <td>CVE-2021-23017</td>
+    <td>7.7</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>Off-by-one dans le resolver DNS de Nginx 1.18...</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td>PHP</td>
+    <td>CVE-2001-1471</td>
+    <td>8.8</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>prefs.php in phpBB 1.4.0 and earlier allows remote authenticated users to execute arbitrary PHP code...</td>
+  </tr>
+  
+  <tr>
+    <td>PHP</td>
+    <td>CVE-2002-1800</td>
+    <td>7.5</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>phpRank 1.8 stores the administrative password in plaintext on the server and in the "ap" cookie, wh...</td>
+  </tr>
+  
+  <tr>
+    <td>PHP</td>
+    <td>CVE-2004-1842</td>
+    <td>8.8</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>Cross-site request forgery (CSRF) vulnerability in Php-Nuke 6.x through 7.1.0 allows remote attacker...</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td>Laravel</td>
+    <td>CVE-2017-14704</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>Multiple unrestricted file upload vulnerabilities in the (1) imageSubmit and (2) proof_submit functi...</td>
+  </tr>
+  
+  <tr>
+    <td>Laravel</td>
+    <td>CVE-2017-16894</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>In Laravel framework through 5.5.21, remote attackers can obtain sensitive information (such as exte...</td>
+  </tr>
+  
+  <tr>
+    <td>Laravel</td>
+    <td>CVE-2018-8947</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>rap2hpoutre Laravel Log Viewer before v0.13.0 relies on Base64 encoding for l, dl, and del requests,...</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td>Ubuntu</td>
+    <td>CVE-2016-2856</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>pt_chown in the glibc package before 2.19-18+deb8u4 on Debian jessie; the elibc package before 2.15-...</td>
+  </tr>
+  
+  <tr>
+    <td>Ubuntu</td>
+    <td>CVE-2016-1240</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>The Tomcat init script in the tomcat7 package before 7.0.56-3+deb8u4 and tomcat8 package before 8.0....</td>
+  </tr>
+  
+  <tr>
+    <td>Ubuntu</td>
+    <td>CVE-2015-1328</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>The overlayfs implementation in the linux (aka Linux kernel) package before 3.19.0-21.21 in Ubuntu t...</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td>API REST</td>
+    <td>CVE-2014-1529</td>
+    <td>8.8</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>The Web Notification API in Mozilla Firefox before 29.0, Firefox ESR 24.x before 24.5, Thunderbird b...</td>
+  </tr>
+  
+  <tr>
+    <td>API REST</td>
+    <td>CVE-2016-0943</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>Adobe Reader and Acrobat before 11.0.14, Acrobat and Acrobat Reader DC Classic before 15.006.30119, ...</td>
+  </tr>
+  
+  <tr>
+    <td>API REST</td>
+    <td>CVE-2016-1290</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>The web API in Cisco Prime Infrastructure 1.2.0 through 2.2(2) and Cisco Evolved Programmable Networ...</td>
+  </tr>
+  
+  
+  
+  
+  
+  <tr>
+    <td>Python Service</td>
+    <td>CVE-2015-7546</td>
+    <td>7.5</td>
+    <td><span class="badge badge-HIGH">HIGH</span></td>
+    <td>The identity service in OpenStack Identity (Keystone) before 2015.1.3 (Kilo) and 8.0.x before 8.0.2 ...</td>
+  </tr>
+  
+  <tr>
+    <td>Python Service</td>
+    <td>CVE-2016-6581</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>A HTTP/2 implementation built using any version of the Python HPACK library between v1.0.0 and v2.2....</td>
+  </tr>
+  
+  <tr>
+    <td>Python Service</td>
+    <td>CVE-2015-3220</td>
+    <td>0</td>
+    <td><span class="badge badge-UNKNOWN">UNKNOWN</span></td>
+    <td>The tlslite library before 0.4.9 for Python allows remote attackers to trigger a denial of service (...</td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td>MySQL</td>
+    <td>CVE-2021-2154</td>
+    <td>4.9</td>
+    <td><span class="badge badge-MEDIUM">MEDIUM</span></td>
+    <td>Élévation de privilèges dans MySQL 5.7...</td>
+  </tr>
+  
+  
+</table>
+
+<h2>Scénarios d'Attaque (MITRE ATT&CK)</h2>
+
+<div class="scenario-card">
+  <h3>SCN-A — Compromission totale via Mirth Connect + Pickle</h3>
+  <p><strong>Objectif :</strong> Accès root + exfiltration des dossiers médicaux</p>
+  <p><strong>Point d'entrée :</strong> CVE-2023-43208 (Mirth Connect RCE non authentifié)</p>
+  <p><strong>Acteur :</strong> APT ciblé — attaquant externe motivé financièrement</p>
+  <p><strong>CVE utilisées :</strong> CVE-2023-43208, CWE-502</p>
+  <h4>Kill Chain :</h4>
+  
+  <div class="step">
+    <strong>Étape 1 — Initial Access (T1190)</strong><br>
+    Exploit Public-Facing Application : Exploitation de CVE-2023-43208 sur Mirth Connect 4.4.0 exposé via proxy<br>
+    <em>Outils : curl, exploit-db, python exploit script</em><br>
+    <em>IoCs : Requêtes POST anormales sur /api/server/ | User-agent inhabituel</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 2 — Execution (T1059)</strong><br>
+    Command and Scripting Interpreter : Exécution de commandes via le RCE obtenu — découverte du service Pickle interne<br>
+    <em>Outils : bash, netcat</em><br>
+    <em>IoCs : Processus enfants de Mirth Connect | Connexions réseau sortantes</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 3 — Lateral Movement (T1210)</strong><br>
+    Exploitation of Remote Services : Injection d'un payload pickle malveillant dans le service de notification Python<br>
+    <em>Outils : pickle payload generator</em><br>
+    <em>IoCs : Trafic inhabituel sur le port du service Python</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 4 — Collection (T1005)</strong><br>
+    Data from Local System : Accès à la base MySQL avec les credentials trouvés en clair (App2023!)<br>
+    <em>Outils : mysql-client</em><br>
+    <em>IoCs : Connexions MySQL depuis IP inhabituelle</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 5 — Exfiltration (T1567)</strong><br>
+    Exfiltration Over Web Service : Exfiltration des dossiers médicaux via le bucket S3 public<br>
+    <em>Outils : aws-cli, curl</em><br>
+    <em>IoCs : Volume de données sortantes anormal | Accès S3 depuis IP inconnue</em>
+  </div>
+  
+  <p><strong>Impact :</strong> CRITIQUE — Violation RGPD/HIPAA, fuite de données de santé, prise de contrôle totale</p>
+  <p><strong>Difficulté de détection :</strong> HIGH</p>
+</div>
+
+<div class="scenario-card">
+  <h3>SCN-B — Exfiltration via SSRF + wkhtmltopdf</h3>
+  <p><strong>Objectif :</strong> Accès aux ressources internes et credentials cloud AWS</p>
+  <p><strong>Point d'entrée :</strong> CVE-2022-35583 (wkhtmltopdf SSRF)</p>
+  <p><strong>Acteur :</strong> Attaquant opportuniste — scan automatisé</p>
+  <p><strong>CVE utilisées :</strong> CVE-2022-35583</p>
+  <h4>Kill Chain :</h4>
+  
+  <div class="step">
+    <strong>Étape 1 — Initial Access (T1190)</strong><br>
+    Exploit Public-Facing Application : Injection d'une URL malveillante dans l'endpoint de génération PDF<br>
+    <em>Outils : curl, Burp Suite</em><br>
+    <em>IoCs : URLs file:// ou http://169.254.169.254 dans les requêtes PDF</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 2 — Discovery (T1580)</strong><br>
+    Cloud Infrastructure Discovery : Accès au metadata service AWS (169.254.169.254) via SSRF<br>
+    <em>Outils : wkhtmltopdf SSRF payload</em><br>
+    <em>IoCs : Requêtes vers 169.254.169.254 dans les logs</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 3 — Credential Access (T1552)</strong><br>
+    Unsecured Credentials : Vol des credentials IAM temporaires depuis le metadata service<br>
+    <em>Outils : curl</em><br>
+    <em>IoCs : Utilisation de credentials IAM depuis IP externe</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 4 — Exfiltration (T1530)</strong><br>
+    Data from Cloud Storage Object : Accès et exfiltration du bucket S3 public avec les credentials volés<br>
+    <em>Outils : aws-cli</em><br>
+    <em>IoCs : Accès massif au bucket S3 depuis IP inconnue</em>
+  </div>
+  
+  <p><strong>Impact :</strong> ÉLEVÉ — Exfiltration données S3, pivot vers autres services AWS</p>
+  <p><strong>Difficulté de détection :</strong> MEDIUM</p>
+</div>
+
+<div class="scenario-card">
+  <h3>SCN-C — Escalade de privilèges via Redis non authentifié</h3>
+  <p><strong>Objectif :</strong> Persistance et mouvement latéral</p>
+  <p><strong>Point d'entrée :</strong> Redis 6.0 sans authentification (port 6379)</p>
+  <p><strong>Acteur :</strong> Attaquant interne ou ayant un accès réseau</p>
+  <p><strong>CVE utilisées :</strong> CVE-2022-0543</p>
+  <h4>Kill Chain :</h4>
+  
+  <div class="step">
+    <strong>Étape 1 — Initial Access (T1133)</strong><br>
+    External Remote Services : Connexion directe à Redis sans authentification sur le port 6379<br>
+    <em>Outils : redis-cli</em><br>
+    <em>IoCs : Connexion Redis depuis IP inhabituelle</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 2 — Persistence (T1053)</strong><br>
+    Scheduled Task/Job : Injection d'une crontab via Redis CONFIG SET dir + CONFIG SET dbfilename<br>
+    <em>Outils : redis-cli</em><br>
+    <em>IoCs : Modification de la configuration Redis | Nouveau fichier cron</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 3 — Execution (T1059)</strong><br>
+    Command and Scripting Interpreter : Exécution du reverse shell via la crontab injectée<br>
+    <em>Outils : netcat, bash</em><br>
+    <em>IoCs : Connexion sortante depuis le serveur Redis | Processus bash inattendu</em>
+  </div>
+  
+  <div class="step">
+    <strong>Étape 4 — Collection (T1005)</strong><br>
+    Data from Local System : Accès à MySQL avec les credentials trouvés dans les fichiers de config<br>
+    <em>Outils : mysql-client, grep</em><br>
+    <em>IoCs : Accès aux fichiers de configuration | Requêtes MySQL inhabituelles</em>
+  </div>
+  
+  <p><strong>Impact :</strong> ÉLEVÉ — Persistance, accès aux données applicatives, mouvement latéral</p>
+  <p><strong>Difficulté de détection :</strong> LOW</p>
+</div>
+
+
+<h2>Stratégies de Mitigation</h2>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-001 — Patcher Mirth Connect vers la version 4.4.1
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> Mirth Connect | <strong>Type :</strong> Patch | <strong>Effort :</strong> LOW</p>
+  <p>CVE-2023-43208 est activement exploitée. La version 4.4.1 corrige la désérialisation non sécurisée.</p>
+  <ol><li>1. Télécharger Mirth Connect 4.4.1 depuis https://github.com/nextgenhealthcare/connect/releases</li><li>2. Sauvegarder la configuration actuelle : cp -r /opt/mirth-connect/conf /backup/mirth-conf-$(date +%Y%m%d)</li><li>3. Arrêter le service : systemctl stop mirth-connect</li><li>4. Appliquer le patch et redémarrer : systemctl start mirth-connect</li><li>5. Vérifier la version : curl http://localhost:8080/api/server/version</li></ol>
+  <p><strong>Vérification :</strong> <code>curl http://localhost:8080/api/server/version doit retourner 4.4.1</code></p>
+</div>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-002 — Activer l'authentification Redis
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> Redis | <strong>Type :</strong> Config | <strong>Effort :</strong> LOW</p>
+  <p>Redis sans auth est accessible par n'importe qui sur le réseau interne.</p>
+  <ol><li>1. Générer un mot de passe fort : openssl rand -hex 32</li><li>2. Éditer redis.conf : nano /etc/redis/redis.conf</li><li>3. Ajouter la ligne : requirepass VOTRE_MOT_DE_PASSE_FORT</li><li>4. Activer bind : bind 127.0.0.1 (si accès local uniquement)</li><li>5. Redémarrer : systemctl restart redis</li><li>6. Tester : redis-cli AUTH VOTRE_MOT_DE_PASSE_FORT</li></ol>
+  <p><strong>Vérification :</strong> <code>redis-cli ping doit retourner NOAUTH Authentication required</code></p>
+</div>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-003 — Remplacer pickle par une sérialisation sécurisée
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> Service Pickle Python | <strong>Type :</strong> Architecture | <strong>Effort :</strong> MEDIUM</p>
+  <p>pickle permet l'exécution de code arbitraire lors de la désérialisation.</p>
+  <ol><li>1. Identifier tous les usages de pickle dans le code : grep -r 'import pickle' /app/</li><li>2. Remplacer par JSON : import json / json.dumps() / json.loads()</li><li>3. Si structures complexes : utiliser marshmallow ou pydantic</li><li>4. Ajouter validation des entrées avant désérialisation</li><li>5. Tests de régression sur les services concernés</li></ol>
+  <p><strong>Vérification :</strong> <code>grep -r 'import pickle' /app/ doit retourner aucun résultat</code></p>
+</div>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-004 — Désactiver les requêtes externes dans wkhtmltopdf
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> wkhtmltopdf | <strong>Type :</strong> Config | <strong>Effort :</strong> LOW</p>
+  <p>wkhtmltopdf peut faire des requêtes vers des ressources internes via SSRF.</p>
+  <ol><li>1. Ajouter les flags : --disable-javascript --no-background --disable-external-links</li><li>2. Bloquer l'accès réseau au processus via iptables ou seccomp</li><li>3. Valider et sanitiser toutes les URLs passées à wkhtmltopdf</li><li>4. Envisager la migration vers un outil moderne (Chromium headless avec sandbox)</li></ol>
+  <p><strong>Vérification :</strong> <code>Tester avec un payload SSRF : file:///etc/passwd — doit être bloqué</code></p>
+</div>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-005 — Changer les credentials MySQL et chiffrer les configs
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> MySQL | <strong>Type :</strong> Config | <strong>Effort :</strong> LOW</p>
+  <p>Mot de passe faible App2023! stocké en clair, facilement devinable.</p>
+  <ol><li>1. Générer un nouveau mot de passe : openssl rand -hex 16</li><li>2. Changer dans MySQL : ALTER USER 'app_user'@'localhost' IDENTIFIED BY 'NOUVEAU_MDP';</li><li>3. Mettre à jour le fichier .env avec le nouveau mot de passe</li><li>4. Chiffrer le fichier .env ou utiliser un vault (HashiCorp Vault, AWS Secrets Manager)</li><li>5. Retirer le fichier .env du dépôt git : echo '.env' >> .gitignore</li></ol>
+  <p><strong>Vérification :</strong> <code>mysql -u app_user -p'App2023!' doit retourner Access denied</code></p>
+</div>
+
+<div class="mitigation-card SHORT_TERM">
+  <h3>VULN-006 — Migrer JWT de HS256 vers RS256
+    <span class="badge badge-MEDIUM">SHORT_TERM</span>
+  </h3>
+  <p><strong>Composant :</strong> API REST JWT | <strong>Type :</strong> Architecture | <strong>Effort :</strong> MEDIUM</p>
+  <p>HS256 utilise une clé symétrique partagée, vulnérable à la confusion d'algorithme.</p>
+  <ol><li>1. Générer une paire de clés RSA : openssl genrsa -out private.pem 2048</li><li>2. Extraire la clé publique : openssl rsa -in private.pem -pubout -out public.pem</li><li>3. Modifier le code de génération de token pour utiliser RS256</li><li>4. Mettre à jour la validation des tokens côté serveur</li><li>5. Implémenter une rotation des clés (expiration 24h)</li></ol>
+  <p><strong>Vérification :</strong> <code>Tenter une attaque de confusion d'algorithme — le token doit être rejeté</code></p>
+</div>
+
+<div class="mitigation-card IMMEDIATE">
+  <h3>VULN-007 — Désactiver l'authentification SSH par mot de passe
+    <span class="badge badge-CRITICAL">IMMEDIATE</span>
+  </h3>
+  <p><strong>Composant :</strong> SSH | <strong>Type :</strong> Config | <strong>Effort :</strong> LOW</p>
+  <p>SSH avec mot de passe est vulnérable aux attaques par force brute.</p>
+  <ol><li>1. Générer une clé SSH : ssh-keygen -t ed25519</li><li>2. Copier la clé publique sur le serveur : ssh-copy-id user@serveur</li><li>3. Éditer /etc/ssh/sshd_config : PasswordAuthentication no</li><li>4. Redémarrer SSH : systemctl restart sshd</li><li>5. Tester la connexion par clé AVANT de fermer la session actuelle</li></ol>
+  <p><strong>Vérification :</strong> <code>ssh -o PasswordAuthentication=yes user@serveur doit retourner Permission denied</code></p>
+</div>
+
+<div class="mitigation-card SHORT_TERM">
+  <h3>VULN-008 — Mettre en place une segmentation réseau
+    <span class="badge badge-MEDIUM">SHORT_TERM</span>
+  </h3>
+  <p><strong>Composant :</strong> Infrastructure | <strong>Type :</strong> Architecture | <strong>Effort :</strong> HIGH</p>
+  <p>Le flat network permet le mouvement latéral libre entre toutes les couches.</p>
+  <ol><li>1. Définir des VLANs par couche : exposition, applicative, données</li><li>2. Configurer des règles firewall strictes entre les VLANs</li><li>3. Appliquer le principe du moindre privilège réseau</li><li>4. Déployer un IDS/IPS (Suricata ou Snort) sur les flux inter-VLAN</li><li>5. Centraliser les logs avec un SIEM (ELK Stack ou Wazuh)</li></ol>
+  <p><strong>Vérification :</strong> <code>ping depuis la couche exposition vers la couche données doit échouer</code></p>
+</div>
+
+
+<footer style="margin-top:60px; text-align:center; color:#aaa; font-size:12px;">
+  Rapport généré automatiquement par VulnAI — Environnement académique isolé
+</footer>
+</body>
+</html>

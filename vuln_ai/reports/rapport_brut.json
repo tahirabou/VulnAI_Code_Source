@@ -1,0 +1,613 @@
+{
+  "analysis": {
+    "vulnerabilities": [
+      {
+        "id": "VULN-001",
+        "component": "Nginx",
+        "type": "Outdated Software",
+        "severity": "HIGH",
+        "cvss_score": 7.5,
+        "description": "Nginx 1.18 is outdated and vulnerable to multiple security issues.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2021-23017",
+            "description": "Off-by-one dans le resolver DNS de Nginx 1.18",
+            "cvss_score": 7.7,
+            "cvss_vector": "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cwe": "CWE-193",
+            "severity": "HIGH"
+          }
+        ]
+      },
+      {
+        "id": "VULN-002",
+        "component": "PHP",
+        "type": "Outdated Software",
+        "severity": "HIGH",
+        "cvss_score": 7.5,
+        "description": "PHP 7.4 is outdated and vulnerable to multiple security issues.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2001-1471",
+            "description": "prefs.php in phpBB 1.4.0 and earlier allows remote authenticated users to execute arbitrary PHP code via an invalid language value, which prevents the variables (1) $l_statsblock in prefs.php or (2) $",
+            "cvss_score": 8.8,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "severity": "HIGH"
+          },
+          {
+            "cve_id": "CVE-2002-1800",
+            "description": "phpRank 1.8 stores the administrative password in plaintext on the server and in the \"ap\" cookie, which allows remote attackers to retrieve the administrative password.",
+            "cvss_score": 7.5,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "severity": "HIGH"
+          },
+          {
+            "cve_id": "CVE-2004-1842",
+            "description": "Cross-site request forgery (CSRF) vulnerability in Php-Nuke 6.x through 7.1.0 allows remote attackers to gain administrative privileges via an img tag with a URL to admin.php.",
+            "cvss_score": 8.8,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "severity": "HIGH"
+          }
+        ]
+      },
+      {
+        "id": "VULN-003",
+        "component": "Laravel",
+        "type": "Outdated Software",
+        "severity": "MEDIUM",
+        "cvss_score": 6.5,
+        "description": "Laravel 8.x is outdated and may be vulnerable to known security issues.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2017-14704",
+            "description": "Multiple unrestricted file upload vulnerabilities in the (1) imageSubmit and (2) proof_submit functions in Claydip Laravel Airbnb Clone 1.0 allow remote authenticated users to execute arbitrary code b",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2017-16894",
+            "description": "In Laravel framework through 5.5.21, remote attackers can obtain sensitive information (such as externally usable passwords) via a direct request for the /.env URI. NOTE: this CVE is only about Larave",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2018-8947",
+            "description": "rap2hpoutre Laravel Log Viewer before v0.13.0 relies on Base64 encoding for l, dl, and del requests, which makes it easier for remote attackers to bypass intended access restrictions, as demonstrated ",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "id": "VULN-004",
+        "component": "Ubuntu",
+        "type": "Outdated Software",
+        "severity": "HIGH",
+        "cvss_score": 7.5,
+        "description": "Ubuntu 20.04 is outdated and may be vulnerable to known security issues.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2016-2856",
+            "description": "pt_chown in the glibc package before 2.19-18+deb8u4 on Debian jessie; the elibc package before 2.15-0ubuntu10.14 on Ubuntu 12.04 LTS and before 2.19-0ubuntu6.8 on Ubuntu 14.04 LTS; and the glibc packa",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2016-1240",
+            "description": "The Tomcat init script in the tomcat7 package before 7.0.56-3+deb8u4 and tomcat8 package before 8.0.14-1+deb8u3 on Debian jessie and the tomcat6 and libtomcat6-java packages before 6.0.35-1ubuntu3.8 o",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2015-1328",
+            "description": "The overlayfs implementation in the linux (aka Linux kernel) package before 3.19.0-21.21 in Ubuntu through 15.04 does not properly check permissions for file creation in the upper filesystem directory",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "id": "VULN-005",
+        "component": "API REST",
+        "type": "Insecure Authentication",
+        "severity": "MEDIUM",
+        "cvss_score": 6.5,
+        "description": "JWT HS256 is susceptible to brute force attacks.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2014-1529",
+            "description": "The Web Notification API in Mozilla Firefox before 29.0, Firefox ESR 24.x before 24.5, Thunderbird before 24.5, and SeaMonkey before 2.26 allows remote attackers to bypass intended source-component re",
+            "cvss_score": 8.8,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "severity": "HIGH"
+          },
+          {
+            "cve_id": "CVE-2016-0943",
+            "description": "Adobe Reader and Acrobat before 11.0.14, Acrobat and Acrobat Reader DC Classic before 15.006.30119, and Acrobat and Acrobat Reader DC Continuous before 15.010.20056 on Windows and OS X mishandle the G",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2016-1290",
+            "description": "The web API in Cisco Prime Infrastructure 1.2.0 through 2.2(2) and Cisco Evolved Programmable Network Manager (EPNM) 1.2 allows remote authenticated users to bypass intended RBAC restrictions and gain",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "id": "VULN-006",
+        "component": "Interface d'administration",
+        "type": "Insecure Authentication",
+        "severity": "LOW",
+        "cvss_score": 3.5,
+        "description": "Basic HTTP authentication is susceptible to brute force attacks.",
+        "attack_vector": "Network",
+        "cve_mapping": []
+      },
+      {
+        "id": "VULN-007",
+        "component": "Python Service",
+        "type": "Insecure Serialization",
+        "severity": "MEDIUM",
+        "cvss_score": 6.5,
+        "description": "Pickle serialization is susceptible to arbitrary code execution.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2015-7546",
+            "description": "The identity service in OpenStack Identity (Keystone) before 2015.1.3 (Kilo) and 8.0.x before 8.0.2 (Liberty) and keystonemiddleware (formerly python-keystoneclient) before 1.5.4 (Kilo) and Liberty be",
+            "cvss_score": 7.5,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "severity": "HIGH"
+          },
+          {
+            "cve_id": "CVE-2016-6581",
+            "description": "A HTTP/2 implementation built using any version of the Python HPACK library between v1.0.0 and v2.2.0 could be targeted for a denial of service attack, specifically a so-called \"HPACK Bomb\" attack. Th",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          },
+          {
+            "cve_id": "CVE-2015-3220",
+            "description": "The tlslite library before 0.4.9 for Python allows remote attackers to trigger a denial of service (runtime exception and process crash).",
+            "cvss_score": 0,
+            "cvss_vector": "",
+            "severity": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "id": "VULN-008",
+        "component": "MySQL",
+        "type": "Insecure Database Configuration",
+        "severity": "LOW",
+        "cvss_score": 3.5,
+        "description": "Database user and password are weak and easily guessable.",
+        "attack_vector": "Network",
+        "cve_mapping": [
+          {
+            "cve_id": "CVE-2021-2154",
+            "description": "Élévation de privilèges dans MySQL 5.7",
+            "cvss_score": 4.9,
+            "cvss_vector": "AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cwe": "CWE-284",
+            "severity": "MEDIUM"
+          }
+        ]
+      }
+    ],
+    "risk_score": 72,
+    "summary": "The MediConnect architecture presents multiple security vulnerabilities due to outdated software, insecure authentication methods, and insecure database configuration."
+  },
+  "scenarios": [
+    {
+      "id": "SCN-A",
+      "title": "Compromission totale via Mirth Connect + Pickle",
+      "objective": "Accès root + exfiltration des dossiers médicaux",
+      "entry_point": "CVE-2023-43208 (Mirth Connect RCE non authentifié)",
+      "threat_actor": "APT ciblé — attaquant externe motivé financièrement",
+      "cves_used": [
+        "CVE-2023-43208",
+        "CWE-502"
+      ],
+      "kill_chain": [
+        {
+          "step": 1,
+          "phase": "Initial Access",
+          "technique_id": "T1190",
+          "technique": "Exploit Public-Facing Application",
+          "description": "Exploitation de CVE-2023-43208 sur Mirth Connect 4.4.0 exposé via proxy",
+          "tools": [
+            "curl",
+            "exploit-db",
+            "python exploit script"
+          ],
+          "iocs": [
+            "Requêtes POST anormales sur /api/server/",
+            "User-agent inhabituel"
+          ]
+        },
+        {
+          "step": 2,
+          "phase": "Execution",
+          "technique_id": "T1059",
+          "technique": "Command and Scripting Interpreter",
+          "description": "Exécution de commandes via le RCE obtenu — découverte du service Pickle interne",
+          "tools": [
+            "bash",
+            "netcat"
+          ],
+          "iocs": [
+            "Processus enfants de Mirth Connect",
+            "Connexions réseau sortantes"
+          ]
+        },
+        {
+          "step": 3,
+          "phase": "Lateral Movement",
+          "technique_id": "T1210",
+          "technique": "Exploitation of Remote Services",
+          "description": "Injection d'un payload pickle malveillant dans le service de notification Python",
+          "tools": [
+            "pickle payload generator"
+          ],
+          "iocs": [
+            "Trafic inhabituel sur le port du service Python"
+          ]
+        },
+        {
+          "step": 4,
+          "phase": "Collection",
+          "technique_id": "T1005",
+          "technique": "Data from Local System",
+          "description": "Accès à la base MySQL avec les credentials trouvés en clair (App2023!)",
+          "tools": [
+            "mysql-client"
+          ],
+          "iocs": [
+            "Connexions MySQL depuis IP inhabituelle"
+          ]
+        },
+        {
+          "step": 5,
+          "phase": "Exfiltration",
+          "technique_id": "T1567",
+          "technique": "Exfiltration Over Web Service",
+          "description": "Exfiltration des dossiers médicaux via le bucket S3 public",
+          "tools": [
+            "aws-cli",
+            "curl"
+          ],
+          "iocs": [
+            "Volume de données sortantes anormal",
+            "Accès S3 depuis IP inconnue"
+          ]
+        }
+      ],
+      "impact": "CRITIQUE — Violation RGPD/HIPAA, fuite de données de santé, prise de contrôle totale",
+      "detection_difficulty": "HIGH"
+    },
+    {
+      "id": "SCN-B",
+      "title": "Exfiltration via SSRF + wkhtmltopdf",
+      "objective": "Accès aux ressources internes et credentials cloud AWS",
+      "entry_point": "CVE-2022-35583 (wkhtmltopdf SSRF)",
+      "threat_actor": "Attaquant opportuniste — scan automatisé",
+      "cves_used": [
+        "CVE-2022-35583"
+      ],
+      "kill_chain": [
+        {
+          "step": 1,
+          "phase": "Initial Access",
+          "technique_id": "T1190",
+          "technique": "Exploit Public-Facing Application",
+          "description": "Injection d'une URL malveillante dans l'endpoint de génération PDF",
+          "tools": [
+            "curl",
+            "Burp Suite"
+          ],
+          "iocs": [
+            "URLs file:// ou http://169.254.169.254 dans les requêtes PDF"
+          ]
+        },
+        {
+          "step": 2,
+          "phase": "Discovery",
+          "technique_id": "T1580",
+          "technique": "Cloud Infrastructure Discovery",
+          "description": "Accès au metadata service AWS (169.254.169.254) via SSRF",
+          "tools": [
+            "wkhtmltopdf SSRF payload"
+          ],
+          "iocs": [
+            "Requêtes vers 169.254.169.254 dans les logs"
+          ]
+        },
+        {
+          "step": 3,
+          "phase": "Credential Access",
+          "technique_id": "T1552",
+          "technique": "Unsecured Credentials",
+          "description": "Vol des credentials IAM temporaires depuis le metadata service",
+          "tools": [
+            "curl"
+          ],
+          "iocs": [
+            "Utilisation de credentials IAM depuis IP externe"
+          ]
+        },
+        {
+          "step": 4,
+          "phase": "Exfiltration",
+          "technique_id": "T1530",
+          "technique": "Data from Cloud Storage Object",
+          "description": "Accès et exfiltration du bucket S3 public avec les credentials volés",
+          "tools": [
+            "aws-cli"
+          ],
+          "iocs": [
+            "Accès massif au bucket S3 depuis IP inconnue"
+          ]
+        }
+      ],
+      "impact": "ÉLEVÉ — Exfiltration données S3, pivot vers autres services AWS",
+      "detection_difficulty": "MEDIUM"
+    },
+    {
+      "id": "SCN-C",
+      "title": "Escalade de privilèges via Redis non authentifié",
+      "objective": "Persistance et mouvement latéral",
+      "entry_point": "Redis 6.0 sans authentification (port 6379)",
+      "threat_actor": "Attaquant interne ou ayant un accès réseau",
+      "cves_used": [
+        "CVE-2022-0543"
+      ],
+      "kill_chain": [
+        {
+          "step": 1,
+          "phase": "Initial Access",
+          "technique_id": "T1133",
+          "technique": "External Remote Services",
+          "description": "Connexion directe à Redis sans authentification sur le port 6379",
+          "tools": [
+            "redis-cli"
+          ],
+          "iocs": [
+            "Connexion Redis depuis IP inhabituelle"
+          ]
+        },
+        {
+          "step": 2,
+          "phase": "Persistence",
+          "technique_id": "T1053",
+          "technique": "Scheduled Task/Job",
+          "description": "Injection d'une crontab via Redis CONFIG SET dir + CONFIG SET dbfilename",
+          "tools": [
+            "redis-cli"
+          ],
+          "iocs": [
+            "Modification de la configuration Redis",
+            "Nouveau fichier cron"
+          ]
+        },
+        {
+          "step": 3,
+          "phase": "Execution",
+          "technique_id": "T1059",
+          "technique": "Command and Scripting Interpreter",
+          "description": "Exécution du reverse shell via la crontab injectée",
+          "tools": [
+            "netcat",
+            "bash"
+          ],
+          "iocs": [
+            "Connexion sortante depuis le serveur Redis",
+            "Processus bash inattendu"
+          ]
+        },
+        {
+          "step": 4,
+          "phase": "Collection",
+          "technique_id": "T1005",
+          "technique": "Data from Local System",
+          "description": "Accès à MySQL avec les credentials trouvés dans les fichiers de config",
+          "tools": [
+            "mysql-client",
+            "grep"
+          ],
+          "iocs": [
+            "Accès aux fichiers de configuration",
+            "Requêtes MySQL inhabituelles"
+          ]
+        }
+      ],
+      "impact": "ÉLEVÉ — Persistance, accès aux données applicatives, mouvement latéral",
+      "detection_difficulty": "LOW"
+    }
+  ],
+  "mitigations": [
+    {
+      "vulnerability_id": "VULN-001",
+      "component": "Mirth Connect",
+      "title": "Patcher Mirth Connect vers la version 4.4.1",
+      "type": "Patch",
+      "priority": "IMMEDIATE",
+      "effort": "LOW",
+      "description": "CVE-2023-43208 est activement exploitée. La version 4.4.1 corrige la désérialisation non sécurisée.",
+      "implementation_steps": [
+        "1. Télécharger Mirth Connect 4.4.1 depuis https://github.com/nextgenhealthcare/connect/releases",
+        "2. Sauvegarder la configuration actuelle : cp -r /opt/mirth-connect/conf /backup/mirth-conf-$(date +%Y%m%d)",
+        "3. Arrêter le service : systemctl stop mirth-connect",
+        "4. Appliquer le patch et redémarrer : systemctl start mirth-connect",
+        "5. Vérifier la version : curl http://localhost:8080/api/server/version"
+      ],
+      "verification": "curl http://localhost:8080/api/server/version doit retourner 4.4.1",
+      "references": [
+        "CVE-2023-43208",
+        "https://github.com/nextgenhealthcare/connect/security"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-002",
+      "component": "Redis",
+      "title": "Activer l'authentification Redis",
+      "type": "Config",
+      "priority": "IMMEDIATE",
+      "effort": "LOW",
+      "description": "Redis sans auth est accessible par n'importe qui sur le réseau interne.",
+      "implementation_steps": [
+        "1. Générer un mot de passe fort : openssl rand -hex 32",
+        "2. Éditer redis.conf : nano /etc/redis/redis.conf",
+        "3. Ajouter la ligne : requirepass VOTRE_MOT_DE_PASSE_FORT",
+        "4. Activer bind : bind 127.0.0.1 (si accès local uniquement)",
+        "5. Redémarrer : systemctl restart redis",
+        "6. Tester : redis-cli AUTH VOTRE_MOT_DE_PASSE_FORT"
+      ],
+      "verification": "redis-cli ping doit retourner NOAUTH Authentication required",
+      "references": [
+        "CVE-2022-0543",
+        "CWE-862"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-003",
+      "component": "Service Pickle Python",
+      "title": "Remplacer pickle par une sérialisation sécurisée",
+      "type": "Architecture",
+      "priority": "IMMEDIATE",
+      "effort": "MEDIUM",
+      "description": "pickle permet l'exécution de code arbitraire lors de la désérialisation.",
+      "implementation_steps": [
+        "1. Identifier tous les usages de pickle dans le code : grep -r 'import pickle' /app/",
+        "2. Remplacer par JSON : import json / json.dumps() / json.loads()",
+        "3. Si structures complexes : utiliser marshmallow ou pydantic",
+        "4. Ajouter validation des entrées avant désérialisation",
+        "5. Tests de régression sur les services concernés"
+      ],
+      "verification": "grep -r 'import pickle' /app/ doit retourner aucun résultat",
+      "references": [
+        "CWE-502",
+        "OWASP A08:2021"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-004",
+      "component": "wkhtmltopdf",
+      "title": "Désactiver les requêtes externes dans wkhtmltopdf",
+      "type": "Config",
+      "priority": "IMMEDIATE",
+      "effort": "LOW",
+      "description": "wkhtmltopdf peut faire des requêtes vers des ressources internes via SSRF.",
+      "implementation_steps": [
+        "1. Ajouter les flags : --disable-javascript --no-background --disable-external-links",
+        "2. Bloquer l'accès réseau au processus via iptables ou seccomp",
+        "3. Valider et sanitiser toutes les URLs passées à wkhtmltopdf",
+        "4. Envisager la migration vers un outil moderne (Chromium headless avec sandbox)"
+      ],
+      "verification": "Tester avec un payload SSRF : file:///etc/passwd — doit être bloqué",
+      "references": [
+        "CVE-2022-35583",
+        "CWE-918"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-005",
+      "component": "MySQL",
+      "title": "Changer les credentials MySQL et chiffrer les configs",
+      "type": "Config",
+      "priority": "IMMEDIATE",
+      "effort": "LOW",
+      "description": "Mot de passe faible App2023! stocké en clair, facilement devinable.",
+      "implementation_steps": [
+        "1. Générer un nouveau mot de passe : openssl rand -hex 16",
+        "2. Changer dans MySQL : ALTER USER 'app_user'@'localhost' IDENTIFIED BY 'NOUVEAU_MDP';",
+        "3. Mettre à jour le fichier .env avec le nouveau mot de passe",
+        "4. Chiffrer le fichier .env ou utiliser un vault (HashiCorp Vault, AWS Secrets Manager)",
+        "5. Retirer le fichier .env du dépôt git : echo '.env' >> .gitignore"
+      ],
+      "verification": "mysql -u app_user -p'App2023!' doit retourner Access denied",
+      "references": [
+        "CWE-521",
+        "OWASP A02:2021"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-006",
+      "component": "API REST JWT",
+      "title": "Migrer JWT de HS256 vers RS256",
+      "type": "Architecture",
+      "priority": "SHORT_TERM",
+      "effort": "MEDIUM",
+      "description": "HS256 utilise une clé symétrique partagée, vulnérable à la confusion d'algorithme.",
+      "implementation_steps": [
+        "1. Générer une paire de clés RSA : openssl genrsa -out private.pem 2048",
+        "2. Extraire la clé publique : openssl rsa -in private.pem -pubout -out public.pem",
+        "3. Modifier le code de génération de token pour utiliser RS256",
+        "4. Mettre à jour la validation des tokens côté serveur",
+        "5. Implémenter une rotation des clés (expiration 24h)"
+      ],
+      "verification": "Tenter une attaque de confusion d'algorithme — le token doit être rejeté",
+      "references": [
+        "CWE-347",
+        "RFC 7518"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-007",
+      "component": "SSH",
+      "title": "Désactiver l'authentification SSH par mot de passe",
+      "type": "Config",
+      "priority": "IMMEDIATE",
+      "effort": "LOW",
+      "description": "SSH avec mot de passe est vulnérable aux attaques par force brute.",
+      "implementation_steps": [
+        "1. Générer une clé SSH : ssh-keygen -t ed25519",
+        "2. Copier la clé publique sur le serveur : ssh-copy-id user@serveur",
+        "3. Éditer /etc/ssh/sshd_config : PasswordAuthentication no",
+        "4. Redémarrer SSH : systemctl restart sshd",
+        "5. Tester la connexion par clé AVANT de fermer la session actuelle"
+      ],
+      "verification": "ssh -o PasswordAuthentication=yes user@serveur doit retourner Permission denied",
+      "references": [
+        "CWE-521",
+        "CIS Benchmark SSH"
+      ]
+    },
+    {
+      "vulnerability_id": "VULN-008",
+      "component": "Infrastructure",
+      "title": "Mettre en place une segmentation réseau",
+      "type": "Architecture",
+      "priority": "SHORT_TERM",
+      "effort": "HIGH",
+      "description": "Le flat network permet le mouvement latéral libre entre toutes les couches.",
+      "implementation_steps": [
+        "1. Définir des VLANs par couche : exposition, applicative, données",
+        "2. Configurer des règles firewall strictes entre les VLANs",
+        "3. Appliquer le principe du moindre privilège réseau",
+        "4. Déployer un IDS/IPS (Suricata ou Snort) sur les flux inter-VLAN",
+        "5. Centraliser les logs avec un SIEM (ELK Stack ou Wazuh)"
+      ],
+      "verification": "ping depuis la couche exposition vers la couche données doit échouer",
+      "references": [
+        "NIST SP 800-41",
+        "CIS Control 12"
+      ]
+    }
+  ]
+}

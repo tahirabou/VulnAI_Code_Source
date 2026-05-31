@@ -1,0 +1,13 @@
+llm:
+  provider: ollama
+  model: mistral
+  base_url: http://localhost:11434
+  temperature: 0.2
+
+nvd:
+  api_key: ""
+  base_url: https://services.nvd.nist.gov/rest/json/cves/2.0
+
+output:
+  format: html
+  dir: ./reports
