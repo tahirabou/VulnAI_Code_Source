@@ -1,6 +1,6 @@
 # VulnAI — Système de Gestion de Vulnérabilités piloté par l'IA
 
-> TP 3 — efrei | Cybersécurité & LLM  
+> Cybersécurité & LLM  
 > Environnement : VM Ubuntu 22.04 (VMware) — LLM : Ollama + Mistral (local, CPU-only)  
 > Architecture analysée : MediConnect Corp — SaaS médical fictif  
 
